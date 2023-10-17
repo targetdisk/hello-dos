@@ -1,0 +1,3 @@
+[submodule "modules/elks"]
+	path = modules/elks
+	url = https://github.com/ghaerr/elks
