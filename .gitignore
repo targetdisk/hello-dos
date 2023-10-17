@@ -1,0 +1,10 @@
+*.exe
+*.o
+*.com
+
+README.html
+
+*.swp
+*.swo
+*.swl
+*.swn
