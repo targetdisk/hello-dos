@@ -1,10 +1,9 @@
 AS = ia16-elf-as
 CC = ia16-elf-gcc
 AR = ia16-elf-ar -r
-RANLIB=	ranlib
+RANLIB = ia16-elf-ranlib
 
 CFLAGS ?= -D__dos -Iinclude -Wall -nostdlib -nostartfiles -nodefaultlibs -fno-builtin
-#CFLAGS ?= -Wall -lgcc
 
 LIBOBJS=lib/init.o lib/abort.o lib/abs.o lib/atexit.o lib/atoi.o \
 	lib/bsearch.o lib/calloc.o lib/clearerr.o lib/ctime.o \
@@ -35,10 +34,6 @@ lib:	lib/libscc.a
 
 lib/%.o: lib/%.c
 	$(CC) -c $(CFLAGS) -o $@ $<
-
-lib/libscc.a:	$(LIBOBJS)
-	$(AR) lib/libscc.a $(LIBOBJS)
-	$(RANLIB) lib/libscc.a
 
 lib/libscc.a:	$(LIBOBJS)
 	$(AR) lib/libscc.a $(LIBOBJS)
